@@ -1,0 +1,324 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  font-family: sans-serif;
+
+  scroll-behavior: smooth;
+}
+
+/* COLOURS */
+html {
+  --border: 10px solid var(--border-color);
+  --border-color: rgb(7, 7, 24);
+  --homepage-primary-color: rgba(37, 172, 160, 0.877);
+  --portfolio-primary-color: rgba(52, 52, 212, 0.637);
+  --portfolio-background-color: rgb(178, 164, 240);
+  --subheading-text-color: rgba(14, 42, 94, 0.952);
+}
+
+/* GENERAL TEXT DECORATION */
+.homepage .highlight {
+  color: black;
+}
+.homepage .underline {
+  text-decoration: underline black;
+}
+
+/* HOMEPAGE */
+
+.homepage {
+  background-color: var(--homepage-primary-color);
+
+  color: white;
+
+  border-top: var(--border);
+  border-bottom: var(--border);
+}
+/* HOMEPAGE-HEADER */
+.homepage-header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+
+  padding: 10px 20px;
+}
+
+/* HOMEPAGE-HEADER NAME */
+.homepage-header .name {
+  display: grid;
+
+  font-size: 2rem;
+
+  padding: 30px 10px;
+  text-align: center;
+}
+
+/* HOMEPAGE-HEADER LINKS */
+
+.homepage-links-list {
+  list-style: none;
+
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-gap: 20px;
+}
+
+.homepage-header li {
+  display: inline;
+}
+
+.homepage-links {
+  display: grid;
+
+  justify-content: right;
+  align-content: center;
+}
+
+.homepage-links-list a {
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--homepage-primary-color);
+
+  background-color: white;
+
+  border: var(--homepage-primary-color) solid 1px;
+  border-radius: 5px;
+  padding: 7px 10px;
+}
+
+/* HOMEPAGE MAIN CONTENT*/
+.homepage-content {
+  display: grid;
+  grid-template:
+    ". content ." 1fr /
+    minmax(100px, auto) minmax(auto, 60ch) auto;
+
+  padding: 10px 20px;
+}
+
+.homepage-main {
+  grid-area: content;
+}
+
+.homepage-content .homepage-title {
+  font-size: 4.5rem;
+  text-align: start;
+  line-height: 6rem;
+}
+
+.homepage-main .homepage-text {
+  font-size: 1rem;
+  line-height: 1.5rem;
+
+  padding-top: 20px;
+  padding-bottom: 60px;
+}
+
+/* MEDIA QUERIES - HEADER */
+
+@media screen and (max-width: 647px) {
+  .homepage-header {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
+  }
+
+  .homepage-content {
+    display: grid;
+    grid-template:
+      "content" 1fr /
+      minmax(auto, 60ch);
+  }
+
+  .homepage-content .homepage-title,
+  .homepage-main .homepage-text {
+    text-align: center;
+  }
+}
+
+/* ABOUT ME SECTION */
+
+/* ABOUT ME TITLE */
+.about-me-title {
+  display: grid;
+
+  color: var(--subheading-text-color);
+  font-size: 2rem;
+  text-align: center;
+  align-content: center;
+
+  padding: 40px 0 10px 0;
+}
+
+/* ABOUT ME - MAIN BODY */
+.about-me {
+  border-bottom: var(--border);
+  padding-bottom: 40px;
+
+  display: grid;
+  grid-template-areas: ". content .";
+  grid-template-columns: 1fr minmax(auto, 60ch) 1fr;
+}
+
+.about-me-container {
+  grid-area: content;
+
+  padding: 10px;
+}
+
+.about-me-subheading {
+  color: var(--subheading-text-color);
+  padding-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.about-me-text {
+  padding-bottom: 10px;
+}
+
+/* ABOUT ME - TECHNICAL SKILLS */
+.technical-skills {
+  color: var(--subheading-text-color);
+  padding: 10px 0;
+  font-size: 1.5rem;
+}
+
+.skills {
+  column-count: 2;
+  list-style: inside;
+
+  align-items: center;
+}
+
+.skills li {
+  padding: 0 20px;
+}
+
+/* PORTFOLIO SECTION */
+
+/* PORTFOLIO HEADER */
+.portfolio {
+  padding: 30px;
+
+  background-color: var(--portfolio-background-color);
+
+  border-bottom: var(--border);
+}
+
+.portfolio-title {
+  color: var(--subheading-text-color);
+
+  text-align: center;
+  font-size: 2rem;
+
+  padding-top: 30px;
+}
+
+/* PORTFOLIO CONTAINER */
+.portfolio-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+  grid-gap: 30px;
+  padding: 20px;
+}
+
+/* PORTFOLIO SUB-SECTIONS */
+.example {
+  background-color: white;
+
+  border: var(--portfolio-primary-color) solid 5px;
+  border-radius: 5px;
+  padding: 30px 20px;
+
+  box-shadow: 5px 5px 15px 2px var(--portfolio-primary-color);
+
+  display: grid;
+  grid-template-rows: 20px 1fr 30px 20px;
+}
+
+.example-title {
+  color: var(--subheading-text-color);
+  font-size: 1.5rem;
+}
+
+.example-info {
+  padding: 20px 0;
+}
+
+/* PORTFOLIO - READ MORE LINKS */
+.read-more-link {
+  border: white solid 1px;
+  border-radius: 3px;
+  background-color: var(--portfolio-primary-color);
+  text-decoration: none;
+  color: white;
+
+  text-align: center;
+  padding: 5px;
+}
+
+/* PORTFOLIO - GITHUB LINKS */
+.github-link {
+  color: rgba(52, 52, 212, 0.918);
+  text-align: center;
+  padding: 10px 5px;
+  font-size: 0.8rem;
+}
+
+/* EXPERIENCE SECTION */
+
+/* EXPERIENCE TITLE */
+.experience-title {
+  display: grid;
+
+  color: var(--subheading-text-color);
+  font-size: 2rem;
+  text-align: center;
+  align-content: center;
+  padding: 30px 0 20px 0;
+}
+
+/* EXPERIENCE MAIN SECTION */
+.experience {
+  padding: 20px;
+
+  display: grid;
+  grid-template-areas: ". content .";
+  grid-template-columns: 1fr minmax(auto, 60ch) 1fr;
+}
+
+.experience-container {
+  grid-area: content;
+
+  align-content: center;
+
+  padding-bottom: 20px;
+}
+
+/* EXPERIENCE SUB-HEADINGS */
+.experience-subheading {
+  color: var(--subheading-text-color);
+
+  padding: 10px 0;
+  font-size: 1.5rem;
+}
+
+/* EXPERIENCE INFO */
+.experience-info {
+  padding-bottom: 10px;
+}
+
+/* FOOTER SECTION */
+.footer {
+  background-color: var(--border-color);
+  padding: 15px;
+}
+
+.footer-text {
+  color: white;
+  font-size: 1.1rem;
+  padding-left: 20px;
+}
